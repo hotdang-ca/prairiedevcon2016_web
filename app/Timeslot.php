@@ -4,19 +4,19 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Session extends Model
+class Timeslot extends Model
 {
     // has one speaker
     public function speaker() {
       return $this->belongsTo('App\Speaker');
     }
 
-    // has one timeslot
-    public function timeslot() {
-      return $this->belongsTo('App\Timeslot');
+    // has one session
+    public function session() {
+      return $this->belongsTo('App\Session');
     }
 
-    // also has one room
+    // has one room
     public function room() {
       return $this->belongsTo('App\Room');
     }
