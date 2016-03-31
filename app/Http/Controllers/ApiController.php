@@ -20,7 +20,9 @@ class ApiController extends Controller
         unset($session['speaker_id']);
       }
 
-      return $sessions;
+      $session_list = array();
+      $session_list['sessions'] $sessions;
+      return $session_list;
     }
 
     public function session_by_id($session_id) {
@@ -34,6 +36,9 @@ class ApiController extends Controller
 
     public function speakers() {
       $speakers = Speaker::all();
+
+      $speakers_list = array();
+      $speakers_list['speakers'] = $speakers;
       return $speakers;
     }
 
@@ -71,7 +76,11 @@ class ApiController extends Controller
         }
       }
 
-      return $timeslots;
+      // provide some mapping for the clients
+      // i suppose this is also good, becase it also provides context for the data
+      $timeslots_list = array();
+      $timeslots_list['timeslots'] = $timeslots;
+      return $timeslots_list;
     }
 
     public function timeslot_by_id($timeslot_id) {
