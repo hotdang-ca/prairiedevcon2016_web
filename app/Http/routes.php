@@ -20,6 +20,10 @@ Route::get('/api/', function() {
 });
 
 Route::get('api/speakers', 'ApiController@speakers');
+Route::get('api/speakers/{speaker_id}', 'ApiController@speaker_by_id');
+
 Route::get('api/sessions', 'ApiController@sessions');
+Route::get('api/sessions/{session_id}', 'ApiController@session_by_id');
+
 Route::get('api/timeslots', 'ApiController@timeslots');
 Route::get('api/timeslots/{timeslot_id}', 'ApiController@timeslot_by_id');
