@@ -13,7 +13,7 @@ class Timeslot extends Model
 
     // has one session
     public function session() {
-      return $this->belongsTo('App\Sesssion');
+      return $this->belongsTo('App\Session');
     }
 
     // has one room
