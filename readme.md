@@ -1,27 +1,44 @@
-# Laravel PHP Framework
+# Unofficial Prairie Dev Con API Service
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+----
+## What is Prairie Dev Con?
+see [Prairie Dev Con](http://www.prairiedevcon.com)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+> Organizations are looking for ways to increase their employee’s skills while maximizing training and professional development budgets. Over six years ago the first Prairie Developer Conference was held in Regina, Saskatchewan to meet this need. It provided a high quality professional development opportunity locally, without the high costs of travel and accommodation typically associated with remote conferences.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+>Our April 11-12, 2016 event in Winnipeg will be the eleventh Prairie Dev Con!
 
-## Official Documentation
+----
+## What is this, then?
+This project is an unofficial API Service written in Laravel, to power an unofficial Mobile App because, well, their app isn't done yet.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+---
+## Who made this?
+James Robert Perih, of [Hot Dang Interactive](http://hotdang.ca/). Hot Dang Interactive helps small business achieve their **hot dang!** moment by leveraging technology in interesting ways.
 
-## Contributing
+----
+## HowTo
+When this goes live, there are a couple of routes of interest:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+1. ** */api/timeslots* **
+This endpoint lists all timeslots, along with associated Rooms, Speaker, Session info
 
-## Security Vulnerabilities
+2. ** */api/timeslots/{timeslot_id}* **
+As above, but just the specific timeslot
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+3. ** */api/sessions* **
+List all sessions
 
-## License
+4. ** */api/sessions/{session_id}* **
+List one specific session
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+5. ** */api/speakers* **
+List all speakers
+
+6. ** */api/speakers/{speaker_id}* **
+List one specific speaker
+
+----
+## changelog
+* 30-Mar-2016 Sessions & Speakers
+* 31-Mar-2016 Timeslots & Rooms
