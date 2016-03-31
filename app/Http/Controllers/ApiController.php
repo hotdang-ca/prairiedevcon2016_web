@@ -23,9 +23,28 @@ class ApiController extends Controller
       return $sessions;
     }
 
+    public function session_by_id($session_id) {
+      $session = Session::find($session_id);
+
+      $session['speaker'] = $session->speaker;
+      unset($session['speaker_id']);
+
+      return $session;
+    }
+
     public function speakers() {
       $speakers = Speaker::all();
       return $speakers;
+    }
+
+    public function speaker_by_id($speaker_id) {
+      $speaker = Speaker::find($speaker_id);
+      $speaker['sessions'] = $speaker->sessions;
+      foreach($speaker['sessions'] as $session) {
+        unset($session['speaker_id']);
+      }
+
+      return $speaker;
     }
 
     public function timeslots() {
