@@ -38,6 +38,11 @@ List all speakers
 6. ** */api/speakers/{speaker_id}* **
 List one specific speaker
 
+
+---
+## No, really.. *HOW*?
+Well, you could try a [sample iOS app](https://github.com/hotdang-ca/prairiedevcon2016_ios). You'll need data, though.
+
 ----
 ## changelog
 * 30-Mar-2016 Sessions & Speakers
