@@ -18,6 +18,28 @@ class ApiController extends Controller
       foreach($sessions as $session) {
         $session['speaker'] = $session->speaker;
         unset($session['speaker_id']);
+
+        // sloppy, sloppy, sloppy... but i just want it done.
+        $timeslot = Timeslot::where('session_id', $session['id'])->first();
+
+        $roomId = $timeslot['room_id'];
+        switch ($timeslot['day']) {
+          case 0:
+            $timeslot['day'] = "Monday";
+            break;
+          case 1:
+            $timeslot['day'] = "Tuesday";
+            break;
+        }
+
+        $room = Room::find($roomId);
+
+        unset($timeslot['speaker_id']);
+        unset($timeslot['session_id']);
+        unset($timeslot['room_id']);
+
+        $session['timeslot'] = $timeslot;
+        $session['room'] = $room;
       }
 
       $session_list = array();
