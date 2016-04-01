@@ -21,7 +21,7 @@ class ApiController extends Controller
       }
 
       $session_list = array();
-      $session_list['sessions'] $sessions;
+      $session_list['sessions'] = $sessions;
       return $session_list;
     }
 
