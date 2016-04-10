@@ -58,10 +58,30 @@ class ApiController extends Controller
 
     public function speakers() {
       $speakers = Speaker::all();
+      foreach ($speakers as $speaker) {
+        $sessions = $speaker->sessions;
+
+        foreach ($sessions as $session) {
+            $timeslot = Timeslot::where('session_id', $session['id'])->first();
+            $roomId = $timeslot['room_id'];
+            $room = Room::find($roomId);
+
+            unset($timeslot['speaker']);
+            unset($timeslot['session']);
+            unset($timeslot['room']);
+
+            unset($session['speaker']);
+
+            $session['timeslot'] = $timeslot;
+            $session['room'] = $room;
+        }
+
+        $speaker['sessions'] = $sessions;
+      }
 
       $speakers_list = array();
       $speakers_list['speakers'] = $speakers;
-      return $speakers;
+      return $speakers_list;
     }
 
     public function speaker_by_id($speaker_id) {
@@ -71,7 +91,9 @@ class ApiController extends Controller
         unset($session['speaker_id']);
       }
 
-      return $speaker;
+      $single_speaker = array();
+      $single_speaker['speaker'] = $speaker;
+      return $single_speaker;
     }
 
     public function speakers_for_company($company_name) {
