@@ -38,12 +38,15 @@ List all speakers
 6. ** */api/speakers/{speaker_id}* **
 List one specific speaker
 
+7. ** */api/speakers/company/{company_name}* **
+Get all speakers belonging to company name
 
 ---
 ## No, really.. *HOW*?
-Well, you could try a [sample iOS app](https://github.com/hotdang-ca/prairiedevcon2016_ios). You'll need data, though.
+Well, you could try a [sample iOS app](https://github.com/hotdang-ca/prairiedevcon2016_ios). You'll need [data](https://hotdang.ca/pdc2016/sampledata.sqlite), though.
 
 ----
 ## changelog
 * 30-Mar-2016 Sessions & Speakers
 * 31-Mar-2016 Timeslots & Rooms
+* 10-Apr-2016 Speakers Details and Search by Company
