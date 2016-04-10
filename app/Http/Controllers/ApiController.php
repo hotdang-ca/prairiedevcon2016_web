@@ -74,6 +74,20 @@ class ApiController extends Controller
       return $speaker;
     }
 
+    public function speakers_for_company($company_name) {
+      $speakers = Speaker::where('company', 'like', '%' . $company_name . '%')->get();
+
+      foreach($speakers as $speaker) {
+        $speaker['sessions'] = $speaker->sessions;
+
+        foreach($speaker['sessions'] as $session) {
+          unset($session['speaker_id']);
+        }
+      }
+
+      return $speakers;
+    }
+
     public function timeslots() {
       $timeslots = Timeslot::all();
       foreach ($timeslots as $timeslot) {
